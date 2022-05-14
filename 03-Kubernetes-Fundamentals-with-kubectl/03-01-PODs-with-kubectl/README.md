@@ -9,7 +9,7 @@
 - Verify if kubernetes worker nodes are ready. 
 ```
 # Configure Cluster Creds (kube config) for Azure AKS Clusters
-az aks get-credentials --resource-group aks-rg1 --name aksdemo1
+az aks get-credentials --resource-group AKS-learnmodule --name udemydemo1
 
 # Get Worker Node Status
 kubectl get nodes
@@ -25,7 +25,11 @@ kubectl get nodes -o wide
 kubectl run <desired-pod-name> --image <Container-Image> 
 
 # Replace Pod Name, Container Image
-kubectl run my-first-pod --image stacksimplify/kubenginx:1.0.0
+kubectl run my-first-pod1 --image stacksimplify/kubenginx:1.0.0
+
+# Replace Pod Name, Container Image -> Det som jeg har oprettet i docker 
+kubectl run my-first-pod --image sawed/kubernetesdocker-course:v1-release
+
 ```  
 
 ### List Pods
@@ -146,7 +150,7 @@ kubectl logs -f my-first-pod
 ```
 # Connect to Nginx Container in a POD
 kubectl exec -it <pod-name> -- /bin/bash
-kubectl exec -it my-first-pod -- /bin/bash
+kubectkube  l exec -it my-first-pod -- /bin/bash
 
 # Execute some commands in Nginx container
 ls
@@ -164,7 +168,7 @@ kubectl exec -it my-first-pod -- env
 kubectl exec -it my-first-pod -- ls
 kubectl exec -it my-first-pod -- cat /usr/share/nginx/html/index.html
 ```
-## Step-06: Get YAML Output of Pod & Service
+## Step-06: Get YAML Output of Pod & Serviceku -> hvis man ønsker at exporte det
 ### Get YAML Output
 ```
 # Get pod definition YAML output

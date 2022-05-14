@@ -1,14 +1,14 @@
-apiVersion: storage.k8s.io/v1
+apiVersion: storage.k8s.io/v1 #denne findes ved et opslag på google
 kind: StorageClass
 metadata:
-  name: managed-premium-retain-sc
+  name: managed-premium-retain-sc # Denne angivelse, betyder at man kan genskabe storage capaciteten.
 provisioner: kubernetes.io/azure-disk
 reclaimPolicy: Retain  # Default is Delete, recommended is retain
 volumeBindingMode: WaitForFirstConsumer # Default is Immediate, recommended is WaitForFirstConsumer
 allowVolumeExpansion: true  
 parameters:
   storageaccounttype: Premium_LRS # or we can use Standard_LRS
-  kind: managed # Default is shared (Other two are managed and dedicated)
+  kind:  # Default is shared (Other two are managed and dedicated)
 
   
 ##############################################################################

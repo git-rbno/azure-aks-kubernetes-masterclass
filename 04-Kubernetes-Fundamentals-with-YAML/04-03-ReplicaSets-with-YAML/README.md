@@ -12,7 +12,7 @@ spec:
   selector:  # Pods label should be defined in ReplicaSet label selector
     matchLabels:
       app: myapp2
-  template:
+  template: #(alt herfra og neden under er relateret til pods)
     metadata:
       name: myapp2-pod
       labels:
