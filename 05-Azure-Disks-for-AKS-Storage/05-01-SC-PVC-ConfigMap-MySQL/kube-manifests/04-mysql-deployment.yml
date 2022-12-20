@@ -4,34 +4,44 @@ metadata:
   name: mysql
 spec: 
   replicas: 1
-  selector:
+  selector: #Pod Select Label 
+            # Labels are key/value pairs that are attached to objects, such as pods. 
+            # Labels are intended to be used to specify identifying attributes of objects that are meaningful and relevant to users, but do not directly imply semantics to the core system
     matchLabels:
       app: mysql
-  strategy:
+  strategy: #Denne er ny kender den ikke - 1:45 i 47 video
     type: Recreate 
-  template: 
+  template: #A deployment creates pods. The template is a template for how to create those pods. If you want to use a deployment 
+            #(where K8s automatically maintains a configured number of replicas of your pod) then you must have a template for creating the pods. Note that the spec part also belongs to the template.
+            # Template field determines how a pod will be created. 
+            # In this field you specify metadata and spec values. 
+            # Pod Template is used in workloads such as DaemonSets, Deployments, Jobs. Based on this template it creates a pod to match desired state.
     metadata: 
       labels: 
         app: mysql
-    spec: 
+    spec: #Containers og Volumes er core for hvad som skal defineres.
       containers:
         - name: mysql
           image: mysql:5.6
           env:
             - name: MYSQL_ROOT_PASSWORD
-              value: dbpassword11
+              value: dbHello_!detg32e
           ports:
             - containerPort: 3306
               name: mysql    
-          volumeMounts:
+          volumeMounts: # I denne fil, skal informationerne nede fra Volumes angives. Databasen bliver oprettet i poden, på nedenstående sti.
             - name: mysql-persistent-storage
               mountPath: /var/lib/mysql    
             - name: usermanagement-dbcreation-script
-              mountPath: /docker-entrypoint-initdb.d #https://hub.docker.com/_/mysql Refer Initializing a fresh instance                                            
+              mountPath: /docker-entrypoint-initdb.d #https://hub.docker.com/_/mysql Refer Initializing a fresh instance
+                                                     # Den opretter en frisk instance, med udgangspunkt i UserManagement-configMap.yml filen - eller nærmere bestemt
+                                                     #mysql_usermgmt.sql: |-
+                                                     #DROP DATABASE IF EXISTS webappdb;
+                                                     #CREATE DATABASE webappdb;                                           
       volumes: 
-        - name: mysql-persistent-storage
+        - name: mysql-persistent-storage # man kan kalde den hvad man ønsker
           persistentVolumeClaim:
-            claimName: azure-managed-disk-pvc
-        - name: usermanagement-dbcreation-script
+            claimName: azure-managed-disk-pvc # Denne information kommer fra UserManagement-configMap.yml filen
+        - name: usermanagement-dbcreation-script # Denne information kommer fra UserManagement-configMap.yml filen
           configMap:
-            name: usermanagement-dbcreation-script
+            name: usermanagement-dbcreation-script # Denne information kommer fra UserManagement-configMap.yml filen

@@ -1,11 +1,11 @@
 apiVersion: v1
-kind: PersistentVolumeClaim
+kind: PersistentVolumeClaim #https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.20/
 metadata:
-  name: azure-managed-disk-pvc
+  name: azure-managed-disk-pvc 
 spec:
   accessModes:
   - ReadWriteOnce
-  storageClassName: managed-premium-retain-sc
+  storageClassName: managed-premium-retain-sc #henter fra storage-class.yaml filen.
   resources:
     requests:
-      storage: 5Gi      #beder om specifikt 5 Gibabyte
+      storage: 5Gi      #beder om specifikt 5 Gibabytep

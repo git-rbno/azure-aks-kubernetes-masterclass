@@ -74,6 +74,8 @@ mysql> show schemas;
 ```
 
 ## Step-05: Clean-Up 
+
+## For at slette skal man stå i mappen /c/Linux/azCliTool/azure-aks-kubernetes-masterclass/05-Azure-Disks-for-AKS-Storage/05-01-SC-PVC-ConfigMap-MySQL for at slette
 ```
 # Delete All
 kubectl delete -f kube-manifests/

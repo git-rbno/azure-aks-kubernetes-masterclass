@@ -1,4 +1,5 @@
 # AKS Storage - Azure Disks
+Forskellen her er at vi bruger diske som Azure allerede har gjort klart til os.
 
 ## Step-01: Introduction
 - We are going to use Azure AKS provisioned storage class as part of this section
@@ -10,7 +11,9 @@
 - Azure AKS provisions two types of storage classes well in advance during the cluster creation process
   - managed-premium
   - default-
-- We can leverage Azure AKS provisioned disk storage classes instead of what we created manually.
+- We can leverage Azure AKS provisioned disk storage classes instead of what we created manually. 
+-> så de har allerede gjort det klart til os.
+
 - **Question-2:** If that is the case why did we use custom storate class in previous section?
 - That is for us to learn the `kind: StorageClass` concept.  
 
@@ -51,11 +54,26 @@ kubectl get pods
 ## Step-05: Connect to MySQL Database
 ```
 # Connect to MYSQL Database
-kubectl run -it --rm --image=mysql:5.6 --restart=Never mysql-client -- mysql -h mysql -pdbpassword11
+kubectl run -it --rm --image=mysql:5.6 --restart=Never mysql-client -- mysql -h mysql -pdbHello_!detg32e
 
 # Verify usermgmt schema got created which we provided in ConfigMap
 mysql> show schemas;
 ```
+
+så burde dette komme frem.
+mysql> show schemas;
++---------------------+
+| Database            |
++---------------------+
+| information_schema  |
+| #mysql50#lost+found |
+| mysql               |
+| performance_schema  |
+| webappdb            |
++---------------------+
+5 rows in set (0.00 sec)
+
+
 
 ## Step-06: Clean-Up
 ```

@@ -8,3 +8,11 @@ spec:
   ports: 
     - port: 3306  
   clusterIP: None # This means we are going to use Pod IP    
+  #ClusterIP: Exposes the service on a cluster-internal IP. Choosing this value makes the service only reachable from within the cluster. This is the default ServiceType
+
+# ClusterIP exposes the following: 
+#spec.clusterIp:spec.ports[*].port
+# You can only access this service while inside the cluster. It is accessible from its spec.clusterIp port. If a spec.ports[*].targetPort is set it will 
+# route from the port to the targetPort. The CLUSTER-IP you get when calling kubectl get services is the IP assigned to this service within the cluster internally.
+
+# https://stackoverflow.com/questions/41509439/whats-the-difference-between-clusterip-nodeport-and-loadbalancer-service-types

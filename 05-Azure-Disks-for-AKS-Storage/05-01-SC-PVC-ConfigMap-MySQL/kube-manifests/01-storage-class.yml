@@ -5,10 +5,12 @@ metadata:
 provisioner: kubernetes.io/azure-disk
 reclaimPolicy: Retain  # Default is Delete, recommended is retain
 volumeBindingMode: WaitForFirstConsumer # Default is Immediate, recommended is WaitForFirstConsumer
+# Dette skyldes, at hvis dette sættes til default. opretter den storage pladsen med det sammen i en zone. Sætter man den til waitForFirstConsumer - betyder,det at man venter indtil databasen er oprettet.
+# Der er større sandsynlighed for at databasen og storage data oprettes i den samme zone, hvor latency er lav end tilfældet havde været, hvis man opretter dem hver for sig.
 allowVolumeExpansion: true  
 parameters:
   storageaccounttype: Premium_LRS # or we can use Standard_LRS
-  kind:  # Default is shared (Other two are managed and dedicated)
+  kind: managed # Default is shared (Other two are managed and dedicated)
 
   
 ##############################################################################

@@ -13,3 +13,7 @@
 *.tfstate
 *.tfstate.backup
 *.tfvars
+
+.python_packages
+__pycache__
+.venv

@@ -1,7 +1,8 @@
+#Denne indeholder core manifest
 apiVersion: v1
 kind: Service
 metadata:
   name: mysql
 spec:
   type: ExternalName
-  externalName: akswebappdb.mysql.database.azure.com
+  externalName: mysqltryg.mysql.database.azure.com

@@ -1,5 +1,8 @@
 # Deploy UserManagement Web Application with MySQL Database
 
+-Forskellen på denne og opgave 05-01 er, at vi har to nye områder 06 og 07 som omhandler:
+**User Management Web Application** 
+
 
 ## Step-01: Introduction
 - We are going to deploy a **User Management Web Application** which will connect to MySQL Database schema **webappdb** during startup.
