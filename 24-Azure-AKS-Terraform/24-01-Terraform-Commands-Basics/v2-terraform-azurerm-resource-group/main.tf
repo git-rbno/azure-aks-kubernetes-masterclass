@@ -10,14 +10,14 @@ provider "azurerm" {
  
 # Create a Azure Resource Group
 resource "azurerm_resource_group" "aks-rg2" {
-  name     = "aks-rg2-tf"
+  name     = "aks-rg2-terraform"
   location = "West Europe"
 
 # Add Tags
-#  tags = {
-#    "environment" = "k8sdev"
-#    "demotag"     = "refreshtest"
-#  }
+  tags = {
+    "environment" = "k8sdev"
+    "demotag"     = "refreshtest" # ensures that if changes are done manual in azure portal 
+  }
 
 }
 
