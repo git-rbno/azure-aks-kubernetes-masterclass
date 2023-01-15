@@ -25,6 +25,7 @@ terraform {
       version = "~> 3.0" #latest version er 3.4.3
     }
   }
+}
 
 /*
 # Terraform State Storage to Azure Storage Container
@@ -34,7 +35,7 @@ terraform {
     container_name        = "tfstatefiles"
     key                   = "terraform.tfstate"
   }  */
-}
+
 
 
 # 2. Terraform Provider Block for AzureRM
