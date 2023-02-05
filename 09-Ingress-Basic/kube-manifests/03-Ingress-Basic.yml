@@ -1,8 +1,9 @@
-# Denne fil er allerede hånteret af AKS.
-apiVersion: networking.k8s.io/v1beta1
+# Denne fil genereres i AKS udemy for services og ingresses, når denne eksekveres
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: nginxapp1-ingress-service
+  namespace: ingress-basic #virker til at denne er nødvendig - for at den kører igennem
   annotations:
     kubernetes.io/ingress.class: nginx  # i aks er der også en anden controller man anvender.
 spec:  
@@ -10,12 +11,12 @@ spec:
   - http:
       paths:
       - path: /
-        pathType: prefix
+        pathType: Prefix
         backend:
           #serviceName: app1-nginx-clusterip-service
           service:
             name: app1-nginx-clusterip-service
-          #servicePort: 80
+          #ervicePort: 80
             port: 
               number: 80
 
