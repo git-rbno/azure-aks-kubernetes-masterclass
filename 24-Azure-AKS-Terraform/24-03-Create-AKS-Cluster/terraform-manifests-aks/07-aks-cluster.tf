@@ -12,7 +12,7 @@
   - type
   - node_labels
   - tags
-3. Enable MSI
+3. Enable MSI -> istedet for service principles
 4. Add On Profiles 
   - Azure Policy
   - Azure Monitor (Reference Log Analytics Workspace id)
@@ -24,7 +24,7 @@
 8. Cluster Tags  
 */
 
-resource "azurerm_kubernetes_cluster" "aks_cluster" {
+resource "azurerm_kubernetes_cluster" "TerraformCreated_aks_cluster" {
   name                = "${azurerm_resource_group.aks_rg.name}-cluster"
   location            = azurerm_resource_group.aks_rg.location
   resource_group_name = azurerm_resource_group.aks_rg.name
@@ -35,12 +35,12 @@ resource "azurerm_kubernetes_cluster" "aks_cluster" {
   default_node_pool {
     name                 = "systempool"
     vm_size              = "Standard_DS2_v2"
-    orchestrator_version = data.azurerm_kubernetes_service_versions.current.latest_version
+    orchestrator_version = data.azurerm_kubernetes_service_versions.current.latest_version #kalder den information jeg har givet o4-aks-version etc.
     availability_zones   = [1, 2, 3]
-    enable_auto_scaling  = true
+    enable_auto_scaling  = true #kunne også have angivet node_count=1, fundet ud af hvad dette står til i aks tryg
     max_count            = 3
     min_count            = 1
-    os_disk_size_gb      = 30
+    os_disk_size_gb      = 20
     type                 = "VirtualMachineScaleSets"
     node_labels = {
       "nodepool-type"    = "system"

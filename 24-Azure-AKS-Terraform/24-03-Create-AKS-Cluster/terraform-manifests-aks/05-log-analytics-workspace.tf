@@ -5,3 +5,4 @@ resource "azurerm_log_analytics_workspace" "insights" {
   resource_group_name = azurerm_resource_group.aks_rg.name
   retention_in_days   = 30
 }
+# location and resource_group_name kommer fra 03-resource-group 
