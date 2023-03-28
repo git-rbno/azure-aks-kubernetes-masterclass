@@ -26,15 +26,15 @@ variable "environment" {
 
 # Variables that need to be supplied for the tags.
 variable "costCentre" {
-  description = "Please provide a cost center for the resource to be allocated to."
+  description = "Azure_udvikling"
 }
 
 variable "contact" {
-  description = "Please provide a contact that is responsible for this resource, this should be a valid distribution email list."
+  description = "rbno@trails-consult.dk"
 }
 
 variable "usage" {
-  description = "Please provide some context for what the resources are being used for."
+  description = "Bruges til at træningsbrug af Terraform scripts"
 }
 
 

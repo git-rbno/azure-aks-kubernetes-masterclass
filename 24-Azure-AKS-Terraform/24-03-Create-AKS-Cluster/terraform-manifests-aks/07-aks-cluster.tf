@@ -40,7 +40,7 @@ resource "azurerm_kubernetes_cluster" "TerraformCreated_aks_cluster" {
     enable_auto_scaling  = true #kunne også have angivet node_count=1, fundet ud af hvad dette står til i aks tryg
     max_count            = 3
     min_count            = 1
-    os_disk_size_gb      = 20
+    os_disk_size_gb      = 30
     type                 = "VirtualMachineScaleSets"
     node_labels = {
       "nodepool-type"    = "system"
