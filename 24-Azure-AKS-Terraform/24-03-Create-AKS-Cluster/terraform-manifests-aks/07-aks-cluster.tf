@@ -31,8 +31,6 @@ resource "azurerm_kubernetes_cluster" "TerraformCreated_aks_cluster" {
   dns_prefix          = "${azurerm_resource_group.aks_rg.name}-cluster"
   kubernetes_version  = data.azurerm_kubernetes_service_versions.current.latest_version
   node_resource_group = "${azurerm_resource_group.aks_rg.name}-nrg"
-  #ny nedenfor
-  tenant_id           = data.azurerm_client_config.current.tenant_id
 
   default_node_pool {
     name                 = "systempool"
@@ -78,7 +76,7 @@ resource "azurerm_kubernetes_cluster" "TerraformCreated_aks_cluster" {
     azure_active_directory {
       managed = true
       #nyt 
-      tenant_id              = data.azurerm_kubernetes_service_versions.current.tenant_id
+      tenant_id              = data.azurerm_client_config.current.tenant_id
       admin_group_object_ids =  [azuread_group.aks_administrators.id]
       azure_rbac_enabled     = true
       # slut nyt

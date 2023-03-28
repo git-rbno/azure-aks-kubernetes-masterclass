@@ -25,6 +25,11 @@ output "latest_version" {
   value = data.azurerm_kubernetes_service_versions.current.latest_version
 }
 
+output "account_id" {
+  value = data.azurerm_client_config.current.client_id
+  tenant_id=data.azurerm_client_config.current.tenant_id
+}
+
 # Azure AD Group Object Id
 output "azure_ad_group_id" {
   value = azuread_group.aks_administrators.id
