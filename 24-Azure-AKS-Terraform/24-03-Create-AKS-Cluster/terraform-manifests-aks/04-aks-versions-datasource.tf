@@ -5,6 +5,7 @@ data "azurerm_kubernetes_service_versions" "current" {
   include_preview = false
 }
 
+#Dette er for at få tenant_id med ind. -> den kaldes i både 08-output og i 07-cluster
 data "azurerm_client_config" "current" {
 }
 

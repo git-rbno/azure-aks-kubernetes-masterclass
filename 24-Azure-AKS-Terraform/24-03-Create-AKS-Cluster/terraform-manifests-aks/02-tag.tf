@@ -4,10 +4,10 @@
 # need to explicitly manage multiple tags in all resources.
 locals {
   common_tags = {
-    Environment = var.Environment
-    Contact     = var.Contact
-    CostCenter  = var.CostCentre
-    Usage       = var.Usage
+    environment = var.environment
+    contact     = var.contact
+    costCenter  = var.costCentre
+    usage       = var.usage
     CreatedDate = timestamp()
   }
 

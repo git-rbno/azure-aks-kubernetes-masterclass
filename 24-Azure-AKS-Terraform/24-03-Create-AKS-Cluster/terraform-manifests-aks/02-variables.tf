@@ -24,6 +24,19 @@ variable "environment" {
   default = "dev"
 }
 
+# Variables that need to be supplied for the tags.
+variable "costCentre" {
+  description = "Please provide a cost center for the resource to be allocated to."
+}
+
+variable "contact" {
+  description = "Please provide a contact that is responsible for this resource, this should be a valid distribution email list."
+}
+
+variable "usage" {
+  description = "Please provide some context for what the resources are being used for."
+}
+
 
 # AKS Input Variables
 
