@@ -28,10 +28,10 @@ terraform {
 
 # Terraform State Storage to Azure Storage Container
   backend "azurerm" {
-    resource_group_name   = "My_terraform-storage-rg"
-    storage_account_name  = "myterraformstatexlrwdrzs"
-    container_name        = "tfstatefiles"
-    key                   = "dev.terraform.tfstate"
+    resource_group_name   = "My_terraform-storage-rg" #manuelt oprettes
+    storage_account_name  = "myterraformstatexlrwdrzs" #manuelt oprettes
+    container_name        = "tfstatefiles" #manuelt oprettes
+    key                   = "dev.terraform.tfstate" #Denne fil bliver oprettet via scriptet og skal ikke selv oprettes...
   }  
 }
 

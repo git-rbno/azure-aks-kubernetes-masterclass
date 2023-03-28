@@ -75,7 +75,12 @@ resource "azurerm_kubernetes_cluster" "TerraformCreated_aks_cluster" {
     enabled = true
     azure_active_directory {
       managed = true
-      admin_group_object_ids = [azuread_group.aks_administrators.id]
+      #nyt 
+      tenant_id              = data.azurerm_client_config.current.tenant_id
+      admin_group_object_ids =  [azuread_group.aks_administrators.id]
+      azure_rbac_enabled     = true
+      # slut nyt
+      # gammelt udkommenteret admin_group_object_ids = [azuread_group.aks_administrators.id]
     }
   }
 
