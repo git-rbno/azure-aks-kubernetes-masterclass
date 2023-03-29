@@ -2,6 +2,17 @@
 resource "azurerm_resource_group" "aks_rg" {
   name = "${var.resource_group_name}-${var.environment}"
   location = var.location
+
+ #nye informationer https://github.com/johnmart82/BlogPosts/blob/master/TerraformTimestamp/main.tf
+  tags = merge(local.common_tags)
+
+  lifecycle {
+    ignore_changes = [
+      tags["CreatedDate"]
+    ]
+
+
+    }
 }
 
 
