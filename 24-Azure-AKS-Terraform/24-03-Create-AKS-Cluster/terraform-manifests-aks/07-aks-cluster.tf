@@ -114,4 +114,5 @@ resource "azurerm_kubernetes_cluster" "TerraformCreated_aks_cluster" {
   #tags = {
   #  Environment = "dev"
   #}
+  }
 }
