@@ -25,11 +25,26 @@ variable "environment" {
 }
 
 
+# Variables that need to be supplied for the tags.
+variable "costCentre" {
+  description = "Azure_udvikling"
+}
+
+variable "contact" {
+  description = "rbno@trails-consult.dk"
+}
+
+variable "usage" {
+  description = "Bruges til at træningsbrug af Terraform scripts"
+}
+
+
+
 # AKS Input Variables
 
 # SSH Public Key for Linux VMs
 variable "ssh_public_key" {
-  default = "~/.ssh/aks-prod-sshkeys-terraform/aksprodsshkey.pub"
+  default = "/Users/development/azure-aks-kubernetes-masterclass-1/.ssh/aks-prod-sshkeys-terraform/aksprodsshkey.pub"
   description = "This variable defines the SSH Public Key for Linux k8s Worker nodes"  
 }
 

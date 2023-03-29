@@ -99,7 +99,12 @@ resource "azurerm_kubernetes_cluster" "aks_cluster" {
     load_balancer_sku = "Standard"
   }
 
-  tags = {
-    Environment = "dev"
+  tags = merge(local.common_tags)
+
+  lifecycle {
+    ignore_changes = [
+      tags["CreatedDate"]
+    ]
+
   }
 }
