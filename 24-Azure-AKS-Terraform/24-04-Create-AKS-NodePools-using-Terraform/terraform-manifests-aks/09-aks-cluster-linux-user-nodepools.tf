@@ -1,6 +1,6 @@
 # Create Linux Azure AKS Node Pool
 # https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/kubernetes_cluster_node_pool
-resource "azurerm_kubernetes_cluster_node_pool" "aks-linux101" {
+resource "azurerm_kubernetes_cluster_node_pool" "linux101" {
   availability_zones    = [1, 2, 3]
   enable_auto_scaling   = true
   kubernetes_cluster_id = azurerm_kubernetes_cluster.aks_cluster.id
