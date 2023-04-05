@@ -38,7 +38,7 @@ resource "azurerm_kubernetes_cluster" "TerraformCreated_aks_cluster" {
     orchestrator_version = data.azurerm_kubernetes_service_versions.current.latest_version #kalder den information jeg har givet o4-aks-version etc.
     availability_zones   = [1, 2, 3]
     enable_auto_scaling  = true #kunne også have angivet node_count=1, fundet ud af hvad dette står til i aks tryg
-    max_count            = 3
+    max_count            = 1
     min_count            = 1
     os_disk_size_gb      = 30
     type                 = "VirtualMachineScaleSets"
