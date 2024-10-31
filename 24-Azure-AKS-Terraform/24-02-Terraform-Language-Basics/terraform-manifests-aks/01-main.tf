@@ -8,42 +8,39 @@
 
 # 1. Terraform Settings Block
 terraform {
-  # 1. Required Version Terraform 
+  # 1. Required Version Terraform
   required_version = ">= 0.13"
   
   # 2. Required Terraform Providers  
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm" #latest version er 3.39
-      version = "~> 2.0"
+      version = "~> 4.7"
     }
     azuread = {
       source  = "hashicorp/azuread"
-      version = "~> 1.0"  #latest version er 2.32.0
+      version = "~> 3.0"  #latest version er 2.32.0
     }
     random = {
       source  = "hashicorp/random"
-      version = "~> 3.0" #latest version er 3.4.3
+      version = "~> 3.6" #latest version er 3.4.3
     }
   }
-}
-
-/*
-# Terraform State Storage to Azure Storage Container
-  backend "azurerm" {
-    resource_group_name   = "terraform-storage-rg"
-    storage_account_name  = "terraformstatexlrwdrzs"
+  /**/
+  # Terraform State Storage to Azure Storage Container
+    backend "azurerm" {
+    resource_group_name   = "My_terraform-storage-rg" #Denne blev oprettet i v1.
+    storage_account_name  = "myterraformstatexlrwdrzs"
     container_name        = "tfstatefiles"
     key                   = "terraform.tfstate"
-  }  */
+    }
+ } 
 
 
 
 # 2. Terraform Provider Block for AzureRM
 provider "azurerm" {
-  features {
-
-  }
+  features {} 
 }
 
 # 3. Terraform Resource Block: Define a Random Pet Resource
