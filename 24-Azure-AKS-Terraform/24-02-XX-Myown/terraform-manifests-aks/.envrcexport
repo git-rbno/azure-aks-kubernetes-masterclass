@@ -1,0 +1,2 @@
+export TF_VAR_tenant_id="1164d5e3-9bf3-4ed3-99d1-89dd755352d9" TF_VAR_client_id=f28e48f2-f097-4b71-80ca-8ce7147deb4e
+export TF_VAR_tenant_id="1164d5e3-9bf3-4ed3-99d1-89dd755352d9" TF_VAR_client_id=f28e48f2-f097-4b71-80ca-8ce7147deb4e
