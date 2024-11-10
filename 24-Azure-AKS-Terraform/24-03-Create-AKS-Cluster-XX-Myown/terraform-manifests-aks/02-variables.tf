@@ -1,0 +1,92 @@
+# Define Input Variables
+# 1. Azure Location (CentralUS)
+# 2. Azure Resource Group Name 
+# 3. Azure AKS Environment Name (Dev, QA, Prod)
+
+
+variable "subscription_id" {
+  description = "The Azure subscription ID"
+  default     = ""
+}
+
+variable "client_id" {
+  description = "The Azure client ID"
+  default     = ""
+}
+
+variable "client_secret" {
+  description = "The Azure client secret"
+  default     = ""
+}
+
+variable "tenant_id" {
+  description = "The Azure tenant ID"
+  default     = ""
+}
+
+# Azure Location
+variable "location" {
+  type = string
+  description = "Azure Region where all these resources will be provisioned"
+  default = "westeurope"
+}
+
+# Azure Resource Group Name
+variable "resource_group_name" {
+  type = string
+  description = "This variable defines the Resource Group"
+  default = "terraform-aks-23-03"
+}
+
+# Azure AKS Environment Name
+variable "environment" {
+  type = string  
+  description = "This variable defines the Environment"  
+  default = "dev"
+}
+
+# Variables that need to be supplied for the tags.
+variable "costCentre" {
+  description = "Azure_udvikling"
+}
+
+variable "contact" {
+  description = "rbno@trails-consult.dk"
+}
+
+variable "usage" {
+  description = "Bruges til at træningsbrug af Terraform scripts"
+}
+
+# AKS Input Variables
+
+# SSH Public Key for Linux VMs
+/*variable "ssh_public_key" {
+  default = "/Users/development/azure-aks-kubernetes-masterclass-1/.ssh/aks-prod-sshkeys-terraform/aksprodsshkey.pub"
+  description = "This variable defines the SSH Public Key for Linux k8s Worker nodes"  
+}*/
+
+variable "ssh_public_key" {
+  default = "/Users/detsker/.ssh/aks-prod-sshkeys-terraform/aksprodsshkey.pub"
+  description = "This variable defines the SSH Public Key for Linux k8s Worker nodes"  
+}
+
+
+# Windows Admin Username for k8s worker nodes -This is for scenario 1 -credentials in cleartext
+variable "windows_admin_username" {
+  type = string
+  default = "azureuser"
+  description = "This variable defines the Windows admin username k8s Worker nodes"  
+}
+
+# Windows Admin Password for k8s worker nodes
+variable "windows_admin_password" {
+  type = string
+  default = "Pesd§asdfrDr&"
+  description = "This variable defines the Windows admin password k8s Worker nodes"  
+}
+
+#new to deal with AAD
+variable "client_app_id" {}
+variable "server_app_id" {}
+variable "server_app_secret" {}

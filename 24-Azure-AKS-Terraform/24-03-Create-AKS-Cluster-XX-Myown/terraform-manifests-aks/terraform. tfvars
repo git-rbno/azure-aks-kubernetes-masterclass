@@ -1,0 +1,7 @@
+subscription_id = var.ARM_SUBSCRIPTION_ID
+client_id       = var.ARM_CLIENT_ID
+client_secret   = var.ARM_CLIENT_SECRET
+tenant_id       = var.ARM_TENANT_ID
+client_app_id = "96de9149-6eba-47a8-bb88-e35745fdfe99"
+server_app_id = "b9fef917-4b2a-4e36-b2ce-07fc790d79ef"
+server_app_secret ="c328cba7-b344-4c8e-b48c-be5b4a69b5a1"
