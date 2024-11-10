@@ -18,6 +18,7 @@ kubectl get all
 kubectl apply -f 01-backend-deployment.yml -f 02-backend-clusterip-service.yml
 kubectl get all
 ```
+#Denne opretter en backup - for backend for både pods, service, deployments, backend og replicationset
 
 
 ## Step-03: Create Frontend Deployment & LoadBalancer Service
@@ -29,6 +30,9 @@ kubectl get all
 kubectl apply -f 03-frontend-deployment.yml -f 04-frontend-LoadBalancer-service.yml
 kubectl get all
 ```
+#Denne opretter en backup - for frontend for både pods, service, deployments, backend og replicationset
+
+
 - **Access REST Application**
 ```
 # Get Service IP

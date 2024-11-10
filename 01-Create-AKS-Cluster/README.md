@@ -54,6 +54,7 @@ Step-03: Cloud Shell - Configure kubectl to connect to AKS Cluster
 
 # Template
 az aks get-credentials --resource-group <Resource-Group-Name> --name <Cluster-Name>
+az aks get-credentials --resource-group 01-nyStart-aks-rg1 --name  nyStart-aksdemo
 
 # Replace Resource Group & Cluster Name
 az aks get-credentials --resource-group aks-rg1 --name aksdemo1

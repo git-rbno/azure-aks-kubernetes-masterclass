@@ -1,0 +1,1 @@
+az aks create --resource-group $RESOURCE_GROUP --name $AKS_CLUSTER_NAME --node-count $NODE_COUNT --enable-managed-identity --nodepool-name $NODEPOOL_NAME --node-vm-size $VM_SIZE --kubernetes-version "1.30" --enable-cluster-autoscaler --min-count $MIN_NODE_COUNT --max-count $MAX_NODE_COUNT --location $LOCATION --generate-ssh-keys
